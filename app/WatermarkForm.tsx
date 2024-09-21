@@ -1,8 +1,5 @@
 "use client";
 import { useEffect } from "react";
-import { pdfjs } from "react-pdf";
-
-// pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.6.82/pdf.min.mjs`;
 
 interface WatermarkFormProps {
   watermarkText: string;

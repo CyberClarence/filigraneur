@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Document, Page } from "react-pdf";
 import { saveAs } from "file-saver";
 import FileUpload from "./FileUpload";
 import WatermarkForm from "./WatermarkForm";
