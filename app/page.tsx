@@ -145,7 +145,7 @@ export default function Home() {
           </svg>
           Filigraneur.fr
         </h1>
-        <h2 className="text-lg sm:text-xl mb-6 sm:mb-8 text-gray-600 text-center flex items-center">
+        <h2 className="text-lg sm:text-xl mb-6 sm:mb-8 text-gray-600 text-center flex items-center gap-[5px]">
           <span>
             <a
               href="https://github.com/cyberclarence/filigraneur"
@@ -156,7 +156,7 @@ export default function Home() {
               Open-source
             </a>
           </span>
-          et sécurisé
+          et<span>sécurisé</span>
         </h2>
         <div className="w-full max-w-md items-start">
           <FileUpload onFileChange={handleFileChange} />
