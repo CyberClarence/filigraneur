@@ -17,8 +17,11 @@ export const metadata: Metadata = {
   title: "Filigraneur - Filigrane Facile et Sécurisé",
   description:
     "Version SECURISÉE et OPEN SOURCE du site de l'état (qui lui présente des vulnérabilités)",
-
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
+    images: ["/og-image.png"],
     type: "website",
     siteName: "Filigrane Facile",
     locale: "fr-FR",
