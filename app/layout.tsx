@@ -58,9 +58,11 @@ export default function RootLayout({
   return (
     <html lang="fr" className="h-[100%] w-[100%]">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col items-center justify-center w-[100vw] h-[100vh] overflow-auto select-none `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col items-center justify-center w-[100vw] h-[100%] overflow-auto select-none `}
       >
-        {children}
+        <div className="h-full w-full flex flex-col relative overflow-auto select-none">
+          {children}
+        </div>
       </body>
     </html>
   );
