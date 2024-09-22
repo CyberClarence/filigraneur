@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { saveAs } from "file-saver";
 import FileUpload from "@/components/FileUpload";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import WatermarkCanvas from "@/components/Watermarkcanvas";
+import { applyWatermark as _applyWatermark } from "@/components/Watermarkcanvas";
 import WatermarkForm from "@/components/WatermarkForm";
 import Preview from "@/components/Preview";
 
@@ -15,15 +15,9 @@ export default function Home() {
   const [preview, setPreview] = useState<string | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  useEffect(() => {
-    if (!file) return;
-    applyWatermark();
-    setPreview(null);
-  }, [file]);
-
   const handleFileChange = (selectedFile: File) => {
     setFile(selectedFile);
-    applyWatermark();
+    generateWatermarkPreview();
     setPreview(null);
   };
 
@@ -31,11 +25,11 @@ export default function Home() {
     setWatermarkText(text);
   };
 
-  const applyWatermark = async () => {
+  const generateWatermarkPreview = async () => {
     if (!file || !watermarkText) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
-    await WatermarkCanvas.applyWatermark(canvas, file, watermarkText);
+    await _applyWatermark(canvas, file, watermarkText);
     setPreview(canvas.toDataURL());
   };
 
@@ -54,14 +48,14 @@ export default function Home() {
           <WatermarkForm
             watermarkText={watermarkText}
             onWatermarkChange={handleWatermarkChange}
-            onApplyWatermark={applyWatermark}
+            onApplyWatermark={generateWatermarkPreview}
           />
           <Preview preview={preview} onDownload={handleDownload} />
         </div>
         <canvas ref={canvasRef} style={{ display: "none" }} />
       </div>
       <Footer />
-      <script src="/pdfjs/pdf.mjs" type="module" />
+      <script src="/pdfjs/pdf.mjs" type="module" async />
     </div>
   );
 }
