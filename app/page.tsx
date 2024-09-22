@@ -15,6 +15,8 @@ export default function Home() {
   const [preview, setPreview] = useState<string | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
   const handleFileChange = (selectedFile: File) => {
     setFile(selectedFile);
     generateWatermarkPreview();
@@ -44,13 +46,30 @@ export default function Home() {
       <Header />
       <div className="flex flex-col w-full items-center justify-start h-full overflow-auto">
         <div className="w-full max-w-md items-center justify-start overflow-auto h-full flex flex-col gap-2">
-          <FileUpload onFileChange={handleFileChange} />
+          <input
+            type="file"
+            accept="image/*,application/pdf"
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              if (file) {
+                handleFileChange(file);
+              }
+            }}
+            ref={fileInputRef}
+            className="border border-gray-300 rounded p-2 w-full"
+          />
           <WatermarkForm
             watermarkText={watermarkText}
             onWatermarkChange={handleWatermarkChange}
             onApplyWatermark={generateWatermarkPreview}
           />
-          <Preview preview={preview} onDownload={handleDownload} />
+          <Preview
+            preview={preview}
+            onDownload={handleDownload}
+            onSelectDocumentClick={() => {
+              fileInputRef.current?.click();
+            }}
+          />
         </div>
         <canvas ref={canvasRef} style={{ display: "none" }} />
       </div>

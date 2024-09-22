@@ -2,9 +2,14 @@
 interface PreviewProps {
   preview: string | null;
   onDownload: () => void;
+  onSelectDocumentClick: () => void;
 }
 
-export default function Preview({ preview, onDownload }: PreviewProps) {
+export default function Preview({
+  preview,
+  onDownload,
+  onSelectDocumentClick,
+}: PreviewProps) {
   return (
     <div className="mt-2 h-full max-h-full overflow-auto flex flex-col items-center gap-2 w-full">
       {preview && (
@@ -24,7 +29,10 @@ export default function Preview({ preview, onDownload }: PreviewProps) {
             className="max-w-full mb-4 "
           />
         ) : (
-          <div className="flex items-center justify-center h-full w-full">
+          <div
+            className="flex items-center justify-center h-full w-full"
+            onClick={onSelectDocumentClick}
+          >
             <p className="text-gray-500">Selectionnez un document</p>
           </div>
         )}
