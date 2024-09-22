@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { saveAs } from "file-saver";
 import FileUpload from "@/components/FileUpload";
 import Footer from "@/components/Footer";
@@ -19,19 +19,20 @@ export default function Home() {
 
   const handleFileChange = (selectedFile: File) => {
     setFile(selectedFile);
-    generateWatermarkPreview();
-    setPreview(null);
   };
+  useEffect(() => {
+    generateWatermarkPreview();
+  }, [file]);
 
   const handleWatermarkChange = (text: string) => {
     setWatermarkText(text);
   };
 
   const generateWatermarkPreview = async () => {
-    if (!file || !watermarkText) return;
+    if (!file) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
-    await _applyWatermark(canvas, file, watermarkText);
+    await _applyWatermark(canvas, file, watermarkText || "demo");
     setPreview(canvas.toDataURL());
   };
 

@@ -114,6 +114,7 @@ function addWatermark(
   yOffset: number,
   watermarkText: string
 ) {
+  if (watermarkText === "") return;
   ctx.save();
 
   ctx.font = "28px 'Merriweather'";

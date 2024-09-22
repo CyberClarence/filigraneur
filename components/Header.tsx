@@ -1,7 +1,7 @@
 export default function Header() {
   return (
-    <div className="w-full items-center justify-center">
-      <div className="flex items-center justify-center   mb-2 sm:mb-3 ">
+    <div className="w-full items-center justify-center border mb-4 flex flex-col p-2">
+      <div className="flex items-center justify-center     ">
         <svg className="w-8 h-8 mr-2" viewBox="0 0 3 2">
           <rect width="1" height="2" fill="#002395" />
           <rect width="1" height="2" x="1" fill="#FFFFFF" />
@@ -11,10 +11,9 @@ export default function Header() {
           Filigraneur.fr
         </h1>
       </div>
-      <h2 className="text-lg sm:text-xl mb-6 sm:mb-8 text-gray-600 text-center items-center justify-center gap-[5px] ">
-        <span className="block sm:inline">Version </span>
-
+      <h2 className="text-lg sm:text-lg  text-gray-600 text-center items-center justify-center gap-[5px]  leading-tight">
         <span className="block sm:inline">
+          Version{" "}
           <a
             href="https://github.com/cyberclarence/filigraneur"
             target="_blank"
