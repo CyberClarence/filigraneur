@@ -10,13 +10,11 @@
   },
   "dependencies": {
     "@types/file-saver": "^2.0.7",
-    "@types/react-pdf": "^7.0.0",
     "file-saver": "^2.0.5",
     "next": "14.2.13",
     "pdfjs-dist": "^4.6.82",
     "react": "^18",
-    "react-dom": "^18",
-    "react-pdf": "^9.1.1"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "typescript": "^5",

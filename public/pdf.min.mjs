@@ -1,16 +1,3 @@
-// moi aussi ça me plait pas
-// mais de ce que j'ai compris la lib pdfjs à besoin de charger depuis une ressource externe
-// le code de son service worker
-// pour traiter les pdfs
-// et donc c'est le code du service worker
-// je l'ai tout droit copié coller depuis mon dossier node_modules
-// "pdfjs-dist": "^4.6.82", fichier /dist/pdf.min.mjs
-// je vous laisse verifier par vous même qu'il n'y a pas de modification
-// a + dans le bus
-// ps: et arrêtez d'utiliser ilovepdf par pitié
-// dites vous que si c'est gratuit c'est que c'est vous le produit ! (et ça vaut pour tous les services en ligne)
-// en l'occurence vous me payez en visibilité #je-suis-votre-stagiaire
-// mon blog: https://cyber-clarence.fr
 /**
  * @licstart The following is the entire license notice for the
  * JavaScript code in this page
@@ -10618,12 +10605,14 @@ class WorkerTransport {
     const t = "GetMetadata",
       e = this.#Gi.get(t);
     if (e) return e;
-    const i = this.messageHandler.sendWithPromise(t, null).then((t) => ({
-      info: t[0],
-      metadata: t[1] ? new Metadata(t[1]) : null,
-      contentDispositionFilename: this._fullReader?.filename ?? null,
-      contentLength: this._fullReader?.contentLength ?? null,
-    }));
+    const i = this.messageHandler
+      .sendWithPromise(t, null)
+      .then((t) => ({
+        info: t[0],
+        metadata: t[1] ? new Metadata(t[1]) : null,
+        contentDispositionFilename: this._fullReader?.filename ?? null,
+        contentLength: this._fullReader?.contentLength ?? null,
+      }));
     this.#Gi.set(t, i);
     return i;
   }

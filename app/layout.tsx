@@ -16,9 +16,26 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Filigraneur - Filigrane Facile et Sécurisé",
   description:
-    "Version SECURISÉE et OPEN SOURCE du site de l'état (qui lui présente des vulnérabilités)",
+    "Version SECURISÉE et OPEN SOURCE du site du gouvernement (qui lui présente des vulnérabilités)",
   icons: {
     icon: "/favicon.ico",
+  },
+  keywords: [
+    "filigrane",
+    "filigraneur",
+    "filigrane facile",
+    "filigrane sécurisé",
+  ],
+  metadataBase: new URL("https://filigraneur.fr"),
+  applicationName: "Filigraneur",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  creator: "CyberClarence",
+  appleWebApp: {
+    title: "Filigraneur",
+    statusBarStyle: "black-translucent",
   },
   openGraph: {
     images: ["/og-image.png"],
@@ -26,9 +43,10 @@ export const metadata: Metadata = {
     siteName: "Filigrane Facile",
     locale: "fr-FR",
     url: "https://filigraneur.fr",
-    title: "Filigraneur - Filigrane Facile et sécurisé",
+    title: "Filigraneur - Filigrane Facile et Sécurisé",
     description:
       "Version SECURISÉE et OPEN SOURCE du site de l'état (qui lui présente des vulnérabilités)",
+    countryName: "France",
   },
 };
 
@@ -38,9 +56,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" className="h-[100%] w-[100%]">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col items-center justify-center w-[100vw] h-[100vh] overflow-auto`}
       >
         {children}
       </body>
