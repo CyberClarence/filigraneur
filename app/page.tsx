@@ -35,12 +35,12 @@ export default function Home() {
 
   const handleDownload = () => {
     if (preview) {
-      saveAs(preview, "watermarked_document.png");
+      saveAs(preview, `${file.name.split(".")[0]}-filigrané.png`);
     }
   };
 
   return (
-    <div className="flex flex-col items-center  h-full w-full p-4 bg-white text-gray-800 mx-auto">
+    <div className="flex flex-col items-center  h-full w-full p-4 text-gray-800 mx-auto">
       <Header />
       <div className="flex flex-col w-full items-center justify-start h-full  ">
         <div className="w-full max-w-md items-center justify-start ">
