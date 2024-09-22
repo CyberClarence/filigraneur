@@ -13,7 +13,7 @@ export default function FileUpload({ onFileChange }: FileUploadProps) {
   };
 
   return (
-    <div className="mb-4 w-full">
+    <div className=" w-full">
       <input
         type="file"
         accept="image/*,application/pdf"
