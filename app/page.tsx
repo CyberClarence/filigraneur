@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react";
 import { saveAs } from "file-saver";
-import FileUpload from "@/components/FileUpload";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { applyWatermark as _applyWatermark } from "@/components/Watermarkcanvas";
