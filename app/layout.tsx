@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     url: "https://filigraneur.fr",
     title: "Filigraneur - Filigrane Facile et Sécurisé",
     description:
-      "Version SECURISÉE et OPEN SOURCE du site de l'état (qui lui présente des vulnérabilités)",
+      "🇫🇷 Version SECURISÉE et OPEN SOURCE du site de l'état (qui lui présente des vulnérabilités)",
     countryName: "France",
   },
 };
