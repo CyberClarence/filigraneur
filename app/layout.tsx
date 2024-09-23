@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Filigraneur - Filigrane Facile et Sécurisé",
+  title: "🛡️ Filigraneur - Filigrane Facile et Sécurisé 🛡️",
   description:
     "Version SECURISÉE et OPEN SOURCE du site du gouvernement (qui lui présente des vulnérabilités)",
   icons: {
