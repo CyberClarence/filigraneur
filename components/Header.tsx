@@ -1,4 +1,5 @@
-export default function Header() {
+"use server";
+export default async function Header() {
   return (
     <div className="w-full items-center justify-center border mb-4 flex flex-col p-2">
       <div className="flex items-center justify-center     ">

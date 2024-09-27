@@ -4,7 +4,7 @@
 
 Imaginez un instant : vous avez besoin d'ajouter un filigrane à un document important. Vous découvrez le site gouvernemental https://filigrane.beta.gouv.fr/, mais un détail vous arrête net. Ce site, bien que pratique, envoie une copie de vos documents sur ses serveurs. Un risque que vous n'êtes pas prêt à prendre.
 
-C'est là que Filigraneur entre en jeu.
+C'est là que Filigraneur.fr entre en jeu.
 
 ### La Sécurité Avant Tout
 
@@ -20,7 +20,7 @@ Filigraneur repense complètement l'approche :
 
 3. **Surveillance Continue** : Un bot vérifie en permanence l'intégrité de notre code. La moindre modification non autorisée déclenche une alerte, vous garantissant que le site que vous utilisez est toujours celui que nous avons conçu pour votre sécurité.
 
-Avec Filigraneur, protégez vos documents sensibles tout en bénéficiant d'un service de filigrane de qualité. Votre sécurité est notre priorité absolue.
+Avec Filigraneur.fr, protégez vos documents sensibles tout en bénéficiant d'un service de filigrane de qualité. Votre sécurité est notre priorité absolue.
 
 ## pour les développeurs
 

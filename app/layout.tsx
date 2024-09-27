@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
+
+export const runtime = "edge";
 
 export const metadata: Metadata = {
   title: "🛡️ Filigraneur - Filigrane Facile et Sécurisé 🛡️",
@@ -32,6 +34,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+
   creator: "CyberClarence",
   appleWebApp: {
     title: "Filigraneur",
@@ -58,7 +61,8 @@ export default function RootLayout({
   return (
     <html lang="fr" className="h-[100%] w-[100%]">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col items-center justify-center w-[100vw] h-[100%] overflow-auto select-none `}
+        // ${geistSans.variable} ${geistMono.variable}
+        className={` antialiased flex flex-col items-center justify-center w-[100vw] h-[100%] overflow-auto select-none `}
       >
         <div className="h-full w-full flex flex-col relative overflow-auto select-none">
           {children}
